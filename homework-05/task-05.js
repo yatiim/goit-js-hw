@@ -18,29 +18,32 @@ class Car {
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
-  constructor({maxSpeed, price}) {
+  constructor({
+    maxSpeed,
+    price
+  }) {
     this.speed = 0,
-    this.price = price,
-    this.maxSpeed = maxSpeed,
-    this.isOn = false,
-    this.distance = 0
+      this.price = price,
+      this.maxSpeed = maxSpeed,
+      this.isOn = false,
+      this.distance = 0
   }
 
   static getSpecs(car) {
-      console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`)
+    console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`)
   }
 
-    /*
+  /*
    * Добавь геттер и сеттер для свойства price,
    * который будет работать с свойством цены автомобиля.
    */
 
-  get _price () {
-      return this.price;
+  get _price() {
+    return this.price;
   }
 
-  set _price (value) {
-      this.price = value;
+  set _price(value) {
+    this.price = value;
   }
 
 
@@ -49,7 +52,7 @@ class Car {
    * Записывает в свойство isOn значение true
    */
   turnOn() {
-      this.isOn = true;
+    this.isOn = true;
   }
 
   /*
@@ -58,8 +61,8 @@ class Car {
    * и сбрасывает текущую скорость в 0
    */
   turnOff() {
-      this.isOn = false;
-      this.speed = 0;
+    this.isOn = false;
+    this.speed = 0;
   }
 
   /*
@@ -68,7 +71,7 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-    (this.speed + value) <= this.maxSpeed ? this.speed += value : console.log("Не хватает мощности! У тебя не феррари!!");
+    (this.speed + value) <= this.maxSpeed ? this.speed += value : this.speed = this.maxSpeed;
   }
 
   /*
@@ -76,7 +79,7 @@ class Car {
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-    value <= this.speed ? this.speed -= value : console.log("Не тормози слишком резко!!"); 
+    value <= this.speed ? this.speed -= value : console.log("Не тормози слишком резко!!");
   }
 
   /*
@@ -84,21 +87,17 @@ class Car {
    * но только в том случае если машина заведена!
    */
   drive(hours) {
-      this.isOn === true ? this.distance += (hours * this.speed) : console.log("Чтобы поехать заведи мотор!!")
+    this.isOn === true ? this.distance += (hours * this.speed) : console.log("Чтобы поехать заведи мотор!!")
   }
 }
 
-const mustang = new Car({ maxSpeed: 200, price: 2000 });
+const mustang = new Car({
+  maxSpeed: 200,
+  price: 2000
+});
 
 mustang.turnOn();
 mustang.accelerate(50);
-console.log(mustang.speed);
-mustang.accelerate(160);
-mustang.accelerate(100);
-console.log(mustang.speed);
-mustang.decelerate(200);
-mustang.decelerate(100);
-console.log(mustang.speed);
 mustang.drive(2);
 
 Car.getSpecs(mustang);

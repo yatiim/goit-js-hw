@@ -2,27 +2,26 @@
 
 class StringBuilder {
 
-constructor (string) {
-  this._value = string
-}
+  constructor(string) {
+    this._value = string
+  }
 
-get value () {
-  return this._value;
-}
+  get value() {
+    return this._value;
+  }
 
-append(str) {
-  this._value = this._value + str;
-}
+  append(str) {
+    this._value = this._value + str;
+  }
 
-prepend(str) {
-  this._value = str + this._value;
+  prepend(str) {
+    this._value = str + this._value;
 
-}
+  }
 
-pad(str) {
-  this._value = str + this._value + str;
-}
-
+  pad(str) {
+    this._value = str + this._value + str;
+  }
 }
 
 
