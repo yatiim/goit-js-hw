@@ -97,7 +97,7 @@ mustang.accelerate(160);
 mustang.accelerate(100);
 console.log(mustang.speed);
 mustang.decelerate(200);
-mustang.decelerate(50);
+mustang.decelerate(100);
 console.log(mustang.speed);
 mustang.drive(2);
 
