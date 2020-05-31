@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-around;
+  width: 900px;
+  margin: auto;
+  padding: 50px 0;
+  color: #ffffff;
+  border-radius: 25px;
+  background-color: #5a5858;
+}
+
+.field,
+.label,
+.value {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 40px;
+  text-align: center;
+  color: #5a5858;
+}
